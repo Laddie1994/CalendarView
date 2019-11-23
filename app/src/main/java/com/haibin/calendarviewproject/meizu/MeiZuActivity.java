@@ -4,7 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 
-import androidx.recyclerview.widget.LinearLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;

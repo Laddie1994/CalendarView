@@ -1,6 +1,7 @@
 package com.haibin.calendarviewproject.pager;
 
-import androidx.recyclerview.widget.LinearLayoutManager;
+
+import android.support.v7.widget.LinearLayoutManager;
 
 import com.haibin.calendarviewproject.Article;
 import com.haibin.calendarviewproject.ArticleAdapter;
