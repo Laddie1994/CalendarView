@@ -26,6 +26,7 @@
         <attr name="scheme_lunar_text_color" format="color" />
         <attr name="scheme_theme_color" format="color" />
 
+        <attr name="selected_current_day" format="boolean" />
         <attr name="selected_theme_color" format="color" />
         <attr name="selected_text_color" format="color" />
         <attr name="selected_lunar_text_color" format="color" />

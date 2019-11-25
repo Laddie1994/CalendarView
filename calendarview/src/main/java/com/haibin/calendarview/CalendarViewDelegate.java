@@ -200,6 +200,11 @@ public final class CalendarViewDelegate {
      */
     private int mSchemeThemeColor, mSelectedThemeColor;
 
+    /**
+     * 选中当前天
+     */
+    boolean mSelectedCurrentDat;
+
 
     /**
      * 自定义的日历路径
@@ -438,6 +443,7 @@ public final class CalendarViewDelegate {
         mCurDayTextColor = array.getColor(R.styleable.CalendarView_current_day_text_color, Color.RED);
         mCurDayLunarTextColor = array.getColor(R.styleable.CalendarView_current_day_lunar_text_color, Color.RED);
 
+        mSelectedCurrentDat = array.getBoolean(R.styleable.CalendarView_selected_current_day, false);
         mSelectedThemeColor = array.getColor(R.styleable.CalendarView_selected_theme_color, 0x50CFCFCF);
         mSelectedTextColor = array.getColor(R.styleable.CalendarView_selected_text_color, 0xFF111111);
 
@@ -1012,7 +1018,7 @@ public final class CalendarViewDelegate {
         for (Calendar a : mItems) {
             if (mSchemeDatesMap.containsKey(a.toString())) {
                 Calendar d = mSchemeDatesMap.get(a.toString());
-                if(d == null){
+                if (d == null) {
                     continue;
                 }
                 a.setScheme(TextUtils.isEmpty(d.getScheme()) ? getSchemeText() : d.getScheme());
@@ -1041,10 +1047,10 @@ public final class CalendarViewDelegate {
         for (String key : mSchemeDates.keySet()) {
             this.mSchemeDatesMap.remove(key);
             Calendar calendar = mSchemeDates.get(key);
-            if(calendar == null){
+            if (calendar == null) {
                 continue;
             }
-            this.mSchemeDatesMap.put(key,calendar);
+            this.mSchemeDatesMap.put(key, calendar);
         }
     }
 

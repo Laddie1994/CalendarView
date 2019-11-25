@@ -211,6 +211,8 @@ public class CalendarView extends FrameLayout {
             } else {
                 mDelegate.mSelectedCalendar = mDelegate.getMinRangeCalendar();
             }
+        } else if (mDelegate.mSelectedCurrentDat) {
+            mDelegate.mSelectedCalendar = mDelegate.createCurrentDate();
         } else {
             mDelegate.mSelectedCalendar = new Calendar();
         }
