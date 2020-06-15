@@ -20,9 +20,9 @@ import android.animation.AnimatorListenerAdapter;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.view.ViewPager;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.viewpager.widget.ViewPager;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -211,7 +211,8 @@ public class CalendarView extends FrameLayout {
             } else {
                 mDelegate.mSelectedCalendar = mDelegate.getMinRangeCalendar();
             }
-        } else if (mDelegate.mSelectedCurrentDat) {
+        } else if (mDelegate.mSelectedCurrentDat &&
+                mDelegate.getSelectMode() == CalendarViewDelegate.SELECT_MODE_SINGLE) {
             mDelegate.mSelectedCalendar = mDelegate.createCurrentDate();
         } else {
             mDelegate.mSelectedCalendar = new Calendar();
